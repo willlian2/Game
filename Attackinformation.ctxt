@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Attackinformation
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Attackinformation\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=tohit\ dmg\ target\ iscrit
+comment1.target=Attackinformation(int,\ int,\ java.lang.String,\ boolean)
+comment2.params=
+comment2.target=int\ gettohit()
+comment3.params=
+comment3.target=int\ getdmg()
+comment4.params=
+comment4.target=java.lang.String\ target()
+comment5.params=
+comment5.target=boolean\ iscrit()
+numComments=6
