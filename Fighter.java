@@ -30,7 +30,16 @@ public class Fighter extends Charater
         {System.out.println("The attack misses fighter!");
         }
     }
-
+    public void takehealing(Attackinformation attackinformation)
+    {if(health+attackinformation.getdmg()>12)
+        {health=12;
+         System.out.println("Figher is healed and now has 12 health");
+        }
+     else
+     {health=health+attackinformation.getdmg();
+         System.out.println("Figher is healed and now has"+health+"health");
+        }
+    }
     public int basicattack()
     {Random random = new Random();
         int hit=random.nextInt(20)+attack+1;

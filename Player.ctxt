@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Player
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Player()
+comment1.params=fighter\ wizard
+comment1.target=Player(Fighter,\ Wizard)
 comment2.params=maptile
 comment2.target=java.lang.String\ getplayeraction(Maptile)
 comment3.params=chance
 comment3.target=java.lang.String\ chancetable(int)
-numComments=4
+comment4.params=action\ combat
+comment4.target=void\ checkchancetable(java.lang.String,\ Combat)
+numComments=5

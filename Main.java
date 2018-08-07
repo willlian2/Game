@@ -8,16 +8,20 @@ import java.util.Scanner;
 public class Main
 {
     public static void main(String[] args)
-    {Player player = new Player();
+    {Fighter fighter = new Fighter();
+     Wizard wizard = new Wizard();
+     Player player = new Player(fighter,wizard);
      Scanner scanner = new Scanner(System.in);
      Maptile nulltile = new Maptile(7);
      boolean check=true;
+     Combat combat = new Combat(fighter);
      System.out.println("Welcome, exit at the inital prompt closes the game, type only in lower case");
      while(check==true)
      {
       
-      player.getplayeraction(nulltile);
-      
+      String action = player.getplayeraction(nulltile);
+      player.checkchancetable(action,combat);
         }
     }
+    
 }

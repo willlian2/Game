@@ -27,7 +27,7 @@ public class Goblin extends Enemy
         else if(attackinformation.gettohit()>AC&&attackinformation.iscrit()==false)
         {health=health-attackinformation.getdmg();
             System.out.println("The attack hits the goblin! They take "+attackinformation.getdmg());
-
+            
         }
         else
         {System.out.println("The attack misses the goblin!");
@@ -51,13 +51,16 @@ public class Goblin extends Enemy
     }
     public Attackinformation combatloop()
     {Random targetrng = new Random();
-        int targetchoice = targetrng.nextInt(1);
+        int targetchoice = targetrng.nextInt(2);
         String target="null";
         if(targetchoice==0)
         {target="fighter";
          System.out.println("The goblin attacks fighter!");
         }
-         
+        else if(targetchoice==1)
+        {target="wizard";
+         System.out.println("The goblin attacks wizard!");
+        }
      int tohit=this.basicattack();
      int dmg = this.dmg();
      boolean iscrit=false;

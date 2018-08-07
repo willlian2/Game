@@ -8,9 +8,11 @@ import java.util.Random;
  */
 public class Player
 {
-   
-    public Player()
-   {
+   Fighter fighter = new Fighter();
+   Wizard wizard = new Wizard();
+    public Player(Fighter fighter,Wizard wizard)
+   {this.fighter=fighter;
+    this.wizard=wizard;
     }
    public String getplayeraction(Maptile maptile)
    {if(maptile.gettilenumber()==7)
@@ -26,7 +28,7 @@ public class Player
      String action;
      Random chance = new Random();
      int chancenum;
-     chancenum=chance.nextInt(1);
+     chancenum=chance.nextInt(2);
      boolean check=true;
      System.out.println(maptile.readtile());
      System.out.println("What would you like to do?");
@@ -78,18 +80,7 @@ public class Player
         }
     }
     else if (action.contains("test"))
-    {Goblin goblin = new Goblin();
-     Fighter fighter = new Fighter();
-        while(fighter.gethealth()>0)
-        {
-     Attackinformation attack = goblin.combatloop();
-        System.out.println(attack.gettohit());
-        System.out.println(attack.getdmg());
-        System.out.println(attack.target());
-        System.out.println(attack.iscrit());
-        fighter.takeattack(attack);
-        System.out.println(fighter.gethealth());
-    }
+    {wizard.combatloop();
     }
     else
     {System.out.println("Sorry I only know stuff");
@@ -102,6 +93,17 @@ public String chancetable(int chance)
 {if(chance==0)
     {return("move");
     }
+ else if(chance==1)
+ {return("singlegoblin");
+    }
     return("fail");
 }
+public void checkchancetable(String action,Combat combat)
+    {if(action.contains("move"))
+        {
+        }
+     else if(action.contains("singlegoblin"))
+     {combat.singlegoblin();
+        }
+    }
 }
