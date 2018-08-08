@@ -27,6 +27,9 @@ public class Wizard extends Charater
         System.out.println("What spell will Wizard cast?");
      Scanner getspell = new Scanner(System.in);
      String spell = getspell.nextLine();
+     if(spell.contains("cancel"))
+     {return combatloop();
+        }
      Attackinformation attack = checkspell(spell);
      if(attack.target()=="fail")
      {System.out.println("That is not a spell");
@@ -51,7 +54,7 @@ public class Wizard extends Charater
         }
      else
      {
-         Attackinformation failedtarget= new Attackinformation(0,0,spell,false);
+         Attackinformation failedtarget= new Attackinformation(0,0,"fail",false);
       return failedtarget;
         }
     }
@@ -120,16 +123,7 @@ public class Wizard extends Charater
         {return this.combatloop();
         }
         else if(action.contains("cast"))
-        {System.out.println("What will wizard cast?");
-         Scanner spellchoice = new Scanner(System.in);
-         String spell = scanner.nextLine();
-         if(spell.contains("cancel"))
-         {return this.combatloop();
-            }
-         else if(spell.contains("out"))
-         {return this.combatloop();
-            }
-         Attackinformation spellinformation = checkspell(spell);
+        {Attackinformation spellinformation = castspell();
          if(spellinformation.target.contains("cancel"))
          {return this.combatloop();
             }
